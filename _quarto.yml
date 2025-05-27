@@ -2,18 +2,25 @@ project:
   type: website
   output-dir: docs
 website:
-  title: "ButterEggs.github.io"
+  title: "Jason Han"
   navbar:
     left:
       - href: index.qmd
         text: Home
       - about.qmd
+      - resources.qmd
+      - project.qmd
+      - free_for_all.qmd
+      - resume_CV.qmd
 
 format:
   html:
-    theme: cosmo
+    theme: 
+      light: brite
+      dark: lux
     css: styles.css
     toc: true
+    page-layout: full
 
 editor: visual
 

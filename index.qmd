@@ -1,14 +1,20 @@
 ---
-title: "ButterEggs.github.io"
+title: "Jason Han"
+image: media_headshot.jpeg
+toc: false
+about: 
+  template: jolla
+  image-shape: round
+  image-width: 17em
+  links:
+    - text: LinkedIn
+      href: linkedin.com/in/jason-h-17ba62270
+    - text: GitHub
+      href: https://github.com/ButterEggs
+    - text: Email
+      href: mailto:jasonhan@ucsb.edu
 ---
 
-This is a Quarto website.
+Hi, I’m Jason Han—a third-year undergraduate at UC Santa Barbara double majoring in Environmental Studies (B.S.) and Geography (B.A.). I'm passionate about restoration ecology and the process of supporting native ecosystems.
+Through my fieldwork, I’ve developed skills in plant identification, phenology data collection, seed cleaning, nursery care, and invasive species removal. I’ve also assisted with biological monitoring projects, trail maintenance, and horticulture work.
 
-To learn more about Quarto websites visit <https://quarto.org/docs/websites>.
-
-```{r}
-1 + 1
-options(repos = c(CRAN = "https://cloud.r-project.org"))
-install.packages("usethis")
-
-```
