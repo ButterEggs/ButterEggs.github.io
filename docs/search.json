@@ -1,0 +1,16 @@
+[
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "ButterEggs.github.io",
+    "section": "",
+    "text": "This is a Quarto website.\nTo learn more about Quarto websites visit https://quarto.org/docs/websites.\n\n1 + 1\n\n[1] 2\n\noptions(repos = c(CRAN = \"https://cloud.r-project.org\"))\ninstall.packages(\"usethis\")\n\nInstalling package into 'C:/Users/jzhan/AppData/Local/R/win-library/4.4'\n(as 'lib' is unspecified)\n\n\npackage 'usethis' successfully unpacked and MD5 sums checked\n\nThe downloaded binary packages are in\n    C:\\Users\\jzhan\\AppData\\Local\\Temp\\RtmpuCayPF\\downloaded_packages"
+  },
+  {
+    "objectID": "about.html",
+    "href": "about.html",
+    "title": "About",
+    "section": "",
+    "text": "About this site\n\n1 + 1\n\n[1] 2"
+  }
+]
