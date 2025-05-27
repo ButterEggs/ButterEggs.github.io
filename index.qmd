@@ -8,7 +8,7 @@ about:
   image-width: 17em
   links:
     - text: LinkedIn
-      href: linkedin.com/in/jason-h-17ba62270
+      href: https://www.linkedin.com/in/jason-h-17ba62270/
     - text: GitHub
       href: https://github.com/ButterEggs
     - text: Email
