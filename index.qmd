@@ -15,6 +15,4 @@ about:
       href: mailto:jasonhan@ucsb.edu
 ---
 
-Hi, I’m Jason Han—a third-year undergraduate at UC Santa Barbara double majoring in Environmental Studies (B.S.) and Geography (B.A.). I'm passionate about restoration ecology and the process of supporting native ecosystems.
-Through my fieldwork, I’ve developed skills in plant identification, phenology data collection, seed cleaning, nursery care, and invasive species removal. I’ve also assisted with biological monitoring projects, trail maintenance, and horticulture work.
-
+I'm a third-year undergraduate at UC Santa Barbara double majoring in Environmental Studies (B.S.) and Geography (B.A.). I'm passionate about restoration ecology and the process of supporting native ecosystems. Through my fieldwork, I’ve developed skills in plant identification, phenology data collection, seed cleaning, nursery care, and invasive species removal. I’ve also assisted with biological monitoring projects, trail maintenance, and horticulture work.

@@ -8,8 +8,8 @@ website:
       - href: index.qmd
         text: Home
       - about.qmd
-      - resume_CV.qmd
       - resources.qmd
+      - resume_CV.qmd
       - project.qmd
 
 format:

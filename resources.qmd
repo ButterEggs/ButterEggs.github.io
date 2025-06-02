@@ -2,4 +2,3 @@
 title: "Resources for Environmental Studies"
 format: html
 ---
-
