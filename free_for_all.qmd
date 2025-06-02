@@ -1,5 +1,0 @@
----
-title: "free_for_all"
-format: html
----
-
