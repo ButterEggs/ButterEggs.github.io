@@ -4,7 +4,7 @@ project:
 website:
   title: "Jason Han"
   navbar:
-    left:
+    right:
       - href: index.qmd
         text: Home
       - href: my_hometown.qmd     
@@ -14,14 +14,18 @@ website:
       - href: resume.qmd
         text: Resume          
       - href: project.qmd
-        text: Projects        
+        text: Projects      
+  page-footer:
+    background: light
+    left: Copyright 2025, Jason Han
+    right: This website is built with [Quarto](https://quarto.org/){target=_blank}
 
 format:
   html:
     theme: 
       light: brite
       dark: darkly
-    css: styles.css
+    css: styles.scss
     toc: true
     page-layout: full
 
