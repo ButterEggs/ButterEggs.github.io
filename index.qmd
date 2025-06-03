@@ -1,6 +1,6 @@
 ---
 title: "Jason Han"
-image: media_headshot.jpeg
+image: media/media_headshot.jpeg
 toc: false
 about: 
   template: jolla
