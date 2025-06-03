@@ -7,9 +7,9 @@ website:
     left:
       - href: index.qmd
         text: Home
-      - about.qmd
-      - resources.qmd
-      - resume_CV.qmd
+      - my_hometown.qmd
+      - resources_for_environmental_studies.qmd
+      - resume.qmd
       - project.qmd
 
 format:
