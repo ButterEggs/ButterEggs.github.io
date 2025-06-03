@@ -23,7 +23,6 @@ website:
 format:
   html:
     theme: 
-      light: brite
       dark: darkly
     css: styles.scss
     toc: true
