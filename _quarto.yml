@@ -7,10 +7,14 @@ website:
     left:
       - href: index.qmd
         text: Home
-      - my_hometown.qmd
-      - resources_for_environmental_studies.qmd
-      - resume.qmd
-      - project.qmd
+      - href: my_hometown.qmd     
+        text: Why I Love Monterey 
+      - href: resources_for_environmental_studies.qmd
+        text: Resources for Environmental Studies     
+      - href: resume.qmd
+        text: Resume          
+      - href: project.qmd
+        text: Projects        
 
 format:
   html:

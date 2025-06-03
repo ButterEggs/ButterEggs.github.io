@@ -1,6 +1,23 @@
 ---
-title: "My Hometown"
+title: "Why I Love My Hometown Monterey California"
+toc: false
+lightbox: true
 ---
 
-```{}
-```
+Having grown up in Monterey, California, I’ve always been surrounded by beautiful beaches, coastal bluffs, oak woodlands, and state parks. This constant exposure to nature helped me develop a deep appreciation for the environment early on. Over time, that appreciation grew into a strong commitment in protecting and preserving natural spaces for future generations. It's also what led me to pursue environmental studies a subject that fascinates me greatly because of the extreme relevance that it holds for today’s world.
+
+Monterey lies along the Central Coast of California and is known not only for its scenic landscapes but also for its ecological importance. The region is part of the Monterey Bay National Marine Sanctuary, one of the largest protected marine areas in the United States. It's home to an incredible diversity of marine life, from sea otters and harbor seals to migrating whales and kelp forests.
+
+![](media/seal.jpg){width="28%"} ![](media/urchin.jpg){width="28%"}
+
+![](media/anemone.jpg){width="28%"} ![](media/beach.jpg){width="28%"}
+
+Places like Asilomar State Beach allow for access to tide pools, sandy dunes, and restored coastal habitats. Elkhorn Slough, one of California’s largest estuaries, serves as a refuge for birds, fish, and sea mammals. We also have state parks such as like Garrapata, Andrew Molera, and Julia Pfeiffer Burns State Park preserving Monterey’s beautiful coastline. These parks are amazing for hiking, wildlife observation, and reconnecting with nature.
+
+![](media/bigsur.jpg){width="34%"}
+
+Monterey County is also home to the Salinas Valley, a globally significant agricultural region called “The Salad Bowl of the World.” This valley produces over one-third of the leafy greens grown in the United States including lettuce, spinach, and kale. The valley’s productivity supplies local communities and food systems far beyond California. I think it's amazing how the labels of produce across the country often says Salinas CA, which always makes me check the packaging when I'm visiting the East Coast.
+
+![](media/salinas.jpeg){width="34%"} ![](media/salinas%20valley.jpg){width="28%"}
+
+Being from a place that holds both ecological, agricultural, and historical significance makes me proud and keeps me interested about how we can balance human needs with environmental stewardship. Monterey isn’t just my hometown it’s the place that continues to fuel my desire to study, protect, and live sustainably within it.
