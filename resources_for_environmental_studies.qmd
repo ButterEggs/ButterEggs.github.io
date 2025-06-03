@@ -28,3 +28,5 @@ format: html
 -   Take classes that cover multiple areas such as, one GE, one special requirement, and one university requirement at the same time to maximize efficiency.
 
 -   Find internships early on in year one.
+
+![](media/ucsb.jpg){width="47%"}  ![](media/ucsb2.jpg){width="40%"}
