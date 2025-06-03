@@ -20,7 +20,7 @@ format:
   html:
     theme: 
       light: brite
-      dark: lux
+      dark: darkly
     css: styles.css
     toc: true
     page-layout: full
