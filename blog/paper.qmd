@@ -16,8 +16,6 @@ San Joaquin Valley, California – Agricultural communities facing severe air po
 
 The paper also discusses a research article on stormwater management, showing how factors like race, gender, and education affect willingness to engage in climate solutions. While marginalized communities often face the worst environmental risks, they also show a strong willingness to advocate for change, if given the resources and political voice to do so.
 
-<iframe src="/Analyzing_Case_Studies_of_Marginalized_Communities.pdf" width="100%" height="600px" style="border: none;">
-
-<p>Your browser does not support PDFs. <a href="/Analyzing_Case_Studies_of_Marginalized_Communities.pdf">Download it here</a>.</p>
+<iframe src="/Analyzing_Case_Studies_of_Marginalized_Communities.pdf" width="100%" height="1000px" style="border: none; max-width: 100%;">
 
 </iframe>
