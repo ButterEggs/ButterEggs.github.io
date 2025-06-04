@@ -23,7 +23,7 @@ website:
 
 format:
   html:
-    css: styles.scss
+    css: styles.css
     toc: true
     page-layout: full
 
