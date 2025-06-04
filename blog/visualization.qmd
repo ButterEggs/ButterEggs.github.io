@@ -1,5 +1,99 @@
 ---
-title: "visualization"
-format: html
+title: "Steps on School Day vs Non-School Day"
+description: "This is a visulizataion of data for my personal data project for ENVS 193DS."
+author: "Jason Han"
+date: "5/31/2025"
+excecute: 
+  warning: false
+  message: false 
+categories: false
 ---
+
+```{r}
+suppressPackageStartupMessages({
+  library(tidyverse)
+  library(dplyr)
+  library(here)
+  library(gt)
+  library(janitor)
+})
+```
+
+Here I read in the data from the CSV file where I recorded my step counts. I then clean the dataset by standardizing the column names, removing missing values, and converting the step count values to a numeric format so they can be used for visualization.
+```{r}
+steps_data <- read.csv(here("steps_data.csv"))
+steps_data_clean <- steps_data |> 
+  clean_names() |>  #cleans the column names to have underscores 
+  drop_na() |> 
+  mutate(steps = as.numeric(gsub(",", "", steps)))  # removes commas 
+  
+  
+```
+
+In this section, I summarize and visualize the relationship between daily step counts and whether it was a school day. I begin by grouping the cleaned dataset by school_day and calculating summary statistics including the sample size, mean, standard deviation, standard error, and a 95% confidence interval around the mean. I then create a jitter plot using ggplot2, which displays individual data points. The plot also includes group means as larger points and standard error bars. 
+```{r}
+steps_data_summary <- steps_data_clean |> 
+group_by(school_day) |> #group data by site
+  summarise( #calculating summary statistics
+    n = n(),
+    mean = mean(steps),
+    sd = sd(steps),
+    se = sd / sqrt(n),
+    t_crit = qt(0.975, df = n - 2),
+    ci_lower = mean - t_crit * se,
+    ci_upper = mean + t_crit * se) |>
+  select(school_day, mean, sd, se, ci_lower, ci_upper) |>  #only display certain statistics
+  mutate(across(mean:ci_upper, ~ round(.x, 1))) #rounding those statistics
+
+ggplot(steps_data_clean,
+       aes(x = school_day, y = steps, color = school_day)) + #setting up x and y axis coloring points by site
+  geom_jitter( #customizing jitter points
+    position = position_jitter(width = 0.2, height = 0),
+    shape = 21,
+    fill = NA,
+    alpha = 0.5,
+    size = 2) +
+  stat_summary( #adding point at group mean
+    fun = mean,
+    geom = "point",
+    size = 3) +
+  stat_summary( #adding standard error bars
+    fun.data = mean_se,
+    geom = "errorbar",
+    width = 0.1) +
+  scale_color_manual( #adding color
+    values = c(
+      yes = "red",
+      no = "blue")) + 
+  scale_y_continuous(
+    breaks = seq(0, 35000, by = 5000),   # adjust max to match your data
+    labels = scales::comma) +
+  theme_classic() + #cleaning backgroud and removing legend
+  theme(legend.position = "none") +
+  labs( #labeling x, y, and titles
+    title = "Steps vs School Day",
+    subtitle = "Jason Han",
+    x = "School Day",
+    y = "Average Steps")
+
+```
+
+Here, I create a summary table of the step count statistics using the gt package. It takes the calculated summary data and formats it into a table. 
+```{r}
+steps_data_summary |> #creating table using the summary data
+  gt() |>
+  cols_label( #renaming the columns
+    school_day = "School Day",
+    mean = "Mean",
+    sd = "Standard Deviation",
+    se = "Standard Error",
+    ci_lower = "95% CI Lower",
+    ci_upper = "95% CI Upper") |>
+  fmt_number( #formating to one decimal
+    columns = everything(),
+    decimals = 1) |>
+tab_header( #adding title
+    title = "Steps vs School Day")
+
+```
 

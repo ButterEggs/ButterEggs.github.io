@@ -4,7 +4,14 @@
     "href": "resume.html",
     "title": "Resume",
     "section": "",
-    "text": "&lt;p&gt;This browser does not support PDFs. Please download the PDF to view it: &lt;a href=\"/resume.pdf\"&gt;Download PDF&lt;/a&gt;.&lt;/p&gt;"
+    "text": "&lt;p&gt;\nYour browser does not support PDFs. &lt;a href=\"/resume.pdf\"&gt;Download it here&lt;/a&gt;.\n&lt;/p&gt;"
+  },
+  {
+    "objectID": "project.html",
+    "href": "project.html",
+    "title": "Projects",
+    "section": "",
+    "text": "Steps on School Day vs Non-School Day\n\n\n\n\n\nThis is a visulizataion of data for my personal data project for ENVS 193DS.\n\n\n\n\n\nMay 31, 2025\n\n\nJason Han\n\n\n\n\n\n\n\n\n\n\n\n\nAnalyzing Case Studies on Marginalized Communities\n\n\n\n\n\nThis paper examines how marginalized, low-income, and minority communities in the U.S. disproportionately suffer from environmental hazards due to systemic neglect, economic injustice, and lack of political power.\n\n\n\n\n\nDec 12, 2024\n\n\nJason Han\n\n\n\n\n\n\nNo matching items"
   },
   {
     "objectID": "index.html",
@@ -12,6 +19,20 @@
     "title": "Jason Han",
     "section": "",
     "text": "I’m a third-year undergraduate at UC Santa Barbara double majoring in Environmental Studies (B.S.) and Geography (B.A.). I’m passionate about restoration ecology and the process of supporting native ecosystems. Through my fieldwork, I’ve developed skills in plant identification, phenology data collection, seed cleaning, nursery care, and invasive species removal. I’ve also assisted with biological monitoring projects, trail maintenance, and horticulture work."
+  },
+  {
+    "objectID": "blog/paper.html",
+    "href": "blog/paper.html",
+    "title": "Analyzing Case Studies on Marginalized Communities",
+    "section": "",
+    "text": "It focuses on three case studies:\nLake Apopka, Florida – Farmworkers exposed to toxic pesticides experienced serious health issues, yet received little to no support during environmental cleanup efforts.\nColfax, Louisiana – A majority-Black community harmed by military burn pits and toxic emissions from Clean Harbors, a private facility operating under weak regulation.\nSan Joaquin Valley, California – Agricultural communities facing severe air pollution. Grassroots coalitions reframed the issue as a public health crisis to push for policy change.\nThe paper also discusses a research article on stormwater management, showing how factors like race, gender, and education affect willingness to engage in climate solutions. While marginalized communities often face the worst environmental risks, they also show a strong willingness to advocate for change, if given the resources and political voice to do so.\n\n&lt;p&gt;\nYour browser does not support PDFs. &lt;a href=\"/Analyzing_Case_Studies_of_Marginalized_Communities.pdf\"&gt;Download it here&lt;/a&gt;.\n&lt;/p&gt;"
+  },
+  {
+    "objectID": "blog/visualization.html",
+    "href": "blog/visualization.html",
+    "title": "Steps on School Day vs Non-School Day",
+    "section": "",
+    "text": "suppressPackageStartupMessages({\n  library(tidyverse)\n  library(dplyr)\n  library(here)\n  library(gt)\n  library(janitor)\n})\n\nHere I read in the data from the CSV file where I recorded my step counts. I then clean the dataset by standardizing the column names, removing missing values, and converting the step count values to a numeric format so they can be used for visualization.\n\nsteps_data &lt;- read.csv(here(\"steps_data.csv\"))\nsteps_data_clean &lt;- steps_data |&gt; \n  clean_names() |&gt;  #cleans the column names to have underscores \n  drop_na() |&gt; \n  mutate(steps = as.numeric(gsub(\",\", \"\", steps)))  # removes commas \n\nIn this section, I summarize and visualize the relationship between daily step counts and whether it was a school day. I begin by grouping the cleaned dataset by school_day and calculating summary statistics including the sample size, mean, standard deviation, standard error, and a 95% confidence interval around the mean. I then create a jitter plot using ggplot2, which displays individual data points. The plot also includes group means as larger points and standard error bars.\n\nsteps_data_summary &lt;- steps_data_clean |&gt; \ngroup_by(school_day) |&gt; #group data by site\n  summarise( #calculating summary statistics\n    n = n(),\n    mean = mean(steps),\n    sd = sd(steps),\n    se = sd / sqrt(n),\n    t_crit = qt(0.975, df = n - 2),\n    ci_lower = mean - t_crit * se,\n    ci_upper = mean + t_crit * se) |&gt;\n  select(school_day, mean, sd, se, ci_lower, ci_upper) |&gt;  #only display certain statistics\n  mutate(across(mean:ci_upper, ~ round(.x, 1))) #rounding those statistics\n\nggplot(steps_data_clean,\n       aes(x = school_day, y = steps, color = school_day)) + #setting up x and y axis coloring points by site\n  geom_jitter( #customizing jitter points\n    position = position_jitter(width = 0.2, height = 0),\n    shape = 21,\n    fill = NA,\n    alpha = 0.5,\n    size = 2) +\n  stat_summary( #adding point at group mean\n    fun = mean,\n    geom = \"point\",\n    size = 3) +\n  stat_summary( #adding standard error bars\n    fun.data = mean_se,\n    geom = \"errorbar\",\n    width = 0.1) +\n  scale_color_manual( #adding color\n    values = c(\n      yes = \"red\",\n      no = \"blue\")) + \n  scale_y_continuous(\n    breaks = seq(0, 35000, by = 5000),   # adjust max to match your data\n    labels = scales::comma) +\n  theme_classic() + #cleaning backgroud and removing legend\n  theme(legend.position = \"none\") +\n  labs( #labeling x, y, and titles\n    title = \"Steps vs School Day\",\n    subtitle = \"Jason Han\",\n    x = \"School Day\",\n    y = \"Average Steps\")\n\n\n\n\n\n\n\n\nHere, I create a summary table of the step count statistics using the gt package. It takes the calculated summary data and formats it into a table.\n\nsteps_data_summary |&gt; #creating table using the summary data\n  gt() |&gt;\n  cols_label( #renaming the columns\n    school_day = \"School Day\",\n    mean = \"Mean\",\n    sd = \"Standard Deviation\",\n    se = \"Standard Error\",\n    ci_lower = \"95% CI Lower\",\n    ci_upper = \"95% CI Upper\") |&gt;\n  fmt_number( #formating to one decimal\n    columns = everything(),\n    decimals = 1) |&gt;\ntab_header( #adding title\n    title = \"Steps vs School Day\")\n\n\n\n\n\n\n\nSteps vs School Day\n\n\nSchool Day\nMean\nStandard Deviation\nStandard Error\n95% CI Lower\n95% CI Upper\n\n\n\n\nno\n13,226.1\n7,685.6\n2,317.3\n7,984.0\n18,468.2\n\n\nyes\n8,191.3\n3,650.7\n730.1\n6,680.9\n9,701.7"
   },
   {
     "objectID": "my_hometown.html",

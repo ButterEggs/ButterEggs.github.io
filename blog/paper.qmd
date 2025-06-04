@@ -1,5 +1,23 @@
 ---
-title: "paper"
-format: html
+title: "Analyzing Case Studies on Marginalized Communities"
+author: "Jason Han"
+date: "12/12/2024"
+description: This paper examines how marginalized, low-income, and minority communities in the U.S. disproportionately suffer from environmental hazards due to systemic neglect, economic injustice, and lack of political power. 
+categories: false
 ---
 
+It focuses on three case studies:
+
+Lake Apopka, Florida – Farmworkers exposed to toxic pesticides experienced serious health issues, yet received little to no support during environmental cleanup efforts.
+
+Colfax, Louisiana – A majority-Black community harmed by military burn pits and toxic emissions from Clean Harbors, a private facility operating under weak regulation.
+
+San Joaquin Valley, California – Agricultural communities facing severe air pollution. Grassroots coalitions reframed the issue as a public health crisis to push for policy change.
+
+The paper also discusses a research article on stormwater management, showing how factors like race, gender, and education affect willingness to engage in climate solutions. While marginalized communities often face the worst environmental risks, they also show a strong willingness to advocate for change, if given the resources and political voice to do so.
+
+<iframe src="/Analyzing_Case_Studies_of_Marginalized_Communities.pdf" width="100%" height="600px" style="border: none;">
+
+<p>Your browser does not support PDFs. <a href="/Analyzing_Case_Studies_of_Marginalized_Communities.pdf">Download it here</a>.</p>
+
+</iframe>

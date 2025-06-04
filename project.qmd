@@ -1,4 +1,10 @@
 ---
-title: "Project"
+title: "Projects"
+page-layout: full
 format: html
+listing:
+  contents: blog
+  sort: "date desc"
+  type: default
+  categories: false
 ---
