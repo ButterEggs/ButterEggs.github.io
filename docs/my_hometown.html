@@ -151,8 +151,52 @@ ul.task-list li input[type="checkbox"] {
 <p>Monterey County is also home to the Salinas Valley, a globally significant agricultural region called “The Salad Bowl of the World.” This valley produces over one-third of the leafy greens grown in the United States including lettuce, spinach, and kale. The valley’s productivity supplies local communities and food systems far beyond California. I think it’s amazing how the labels of produce across the country often says Salinas CA, which always makes me check the packaging when I’m visiting the East Coast.</p>
 <p><img src="media/salinas.jpeg" class="img-fluid" style="width:40.0%"> <img src="media/salinas valley.jpg" class="img-fluid" style="width:33.0%"></p>
 <p>Being from a place that holds both ecological, agricultural, and historical significance makes me proud and keeps me interested about how we can balance human needs with environmental stewardship. Monterey isn’t just my hometown it’s the place that continues to fuel my desire to study, protect, and live sustainably within it.</p>
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.3/dist/leaflet.css">
+<script src="https://unpkg.com/leaflet@1.9.3/dist/leaflet.js"></script>
+<section id="map-of-my-favorite-places-in-monterey" class="level2">
+<h2 class="anchored" data-anchor-id="map-of-my-favorite-places-in-monterey">Map of My Favorite Places in Monterey</h2>
+<div id="map" style="height: 500px;">
+
+</div>
+<script>
+  var map = L.map('map').setView([36.6, -121.9], 13);
+
+  L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+    attribution: 'Map data © <a href="https://openstreetmap.org">OpenStreetMap</a> contributors'
+  }).addTo(map);
+
+  const places = [
+  {
+    name: "Alvarado Street",
+    coords: [36.598664, -121.894768],
+    description: "Downtown restaurants"
+  },
+  {
+    name: "Asilomar State Beach",
+    coords: [36.636660, -121.930297],
+    description: "Coastal beach and tidepools."
+  },
+  {
+    name: "Old Fisherman's Wharf",
+    coords: [36.603633, -121.893338],
+    description: "Resturants and strolling"
+  },
+  {
+    name: "Cannery Row & Monterey Bay Aquarium",
+    coords: [36.617940, -121.902019],
+    description: "World-famous aquarium."
+  }
+];
+
+  places.forEach(place => {
+    L.marker(place.coords)
+      .addTo(map)
+      .bindPopup(`<b>${place.name}</b><br>${place.description}`);
+  });
+</script>
 
 
+</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
